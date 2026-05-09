@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --sidebar-width: 260px;
+  --app-bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text-strong: #0f172a;
+  --text: #334155;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --brand: #7c3aed;
+  --brand-50: #f5f3ff;
+  --brand-100: #ede9fe;
+}
+
+html, body { background: var(--app-bg); color: var(--text-strong); }
+
+/* Custom scrollbar — light theme */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; border: 2px solid var(--app-bg); }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Subtle gradient accent for brand text */
+.gradient-text {
+  background: linear-gradient(135deg, #6d28d9 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover — soft lift */
+.card-hover { transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
+.card-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.12);
+  border-color: var(--border-strong);
+}
+
+/* AI glow — soft violet */
+.ai-glow {
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.1), 0 8px 24px -8px rgba(124, 58, 237, 0.18);
+}
+
+/* Pulse animation for AI loading */
+@keyframes ai-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.ai-pulse { animation: ai-pulse 1.5s ease-in-out infinite; }
+
+/* Page-section divider */
+.divider { background: linear-gradient(to right, transparent, var(--border), transparent); height: 1px; }
